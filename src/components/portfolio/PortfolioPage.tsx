@@ -55,7 +55,7 @@ export function PortfolioPage() {
               <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground md:text-lg">{personalData.intro}</p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Button size="lg" onClick={() => scrollTo("projects")}>Explore my work <ArrowDown /></Button>
-                <Button size="lg" variant="outline" asChild><a href={`mailto:${personalData.email}`}>Start a conversation <ArrowUpRight /></a></Button>
+                <Button size="lg" variant="outline" asChild><a href={`mailto:${personalData.email}`}>Let’s Connect <ArrowUpRight /></a></Button>
               </div>
               <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-sm text-muted-foreground"><span className="inline-flex items-center gap-2"><MapPin size={15} className="text-primary" />{personalData.locations[0]}</span><span className="inline-flex items-center gap-2"><Zap size={15} className="text-primary" />Building intelligent systems</span></div>
             </div>
@@ -68,12 +68,16 @@ export function PortfolioPage() {
         </section>
 
         <section id="about" className="section-shell reveal">
-          <SectionHeading index="01" label="Who I am" title="Curiosity, grounded in engineering." />
+          <SectionHeading index="01" label="Who I am" title="Building at the intersection of EEE & AI." />
           <div className="grid gap-12 lg:grid-cols-[1.15fr_.85fr]">
             <div className="space-y-5 text-lg leading-8 text-muted-foreground">{personalData.about.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
             <div className="data-panel">{personalData.details.map((item) => <div className="data-row" key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}</div>
           </div>
           <div className="mt-14 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-4">{personalData.highlights.map((item, index) => <article className="highlight" key={item.label}><span>0{index + 1}</span><h3>{item.label}</h3><p>{item.value}</p></article>)}</div>
+          <div className="mt-10 border border-border bg-card/40 p-6 md:p-7">
+            <p className="eyebrow"><span className="status-dot" /> Future Direction</p>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-muted-foreground md:text-lg">{personalData.futureDirection}</p>
+          </div>
         </section>
 
         <section id="education" className="section-band reveal">
