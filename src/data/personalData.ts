@@ -5,7 +5,8 @@ export const personalData = {
   email: "apurbodip9@gmail.com",
   whatsapp: "+880191925330",
   locations: ["Monirampur, Jashore", "Jamalpur Sadar"],
-  intro: "Electrical and Electronic Engineering student exploring the intersection of intelligent systems, automation, and practical engineering.",
+  intro: "An EEE student exploring Machine Learning, Deep Learning, and AI Automation while building practical engineering and intelligent systems.",
+  futureDirection: "Building a career in Electrical & Electronic Engineering while developing expertise in Machine Learning, AI Agents, and AI Automation.",
   about: [
     "I’m Apurbo Kumar Dip, an Electrical and Electronic Engineering (EEE) student at Jamalpur Science and Technology University (JSTU). I’m passionate about Machine Learning, Deep Learning, AI Automation, electronics, and emerging technologies.",
     "I completed my SSC in 2020 with a GPA of 4.56 and HSC in 2022 with a GPA of 4.98. Alongside my academic journey in EEE, I enjoy learning new technologies, experimenting with ideas, and building practical projects.",
