@@ -1,0 +1,55 @@
+export const personalData = {
+  name: "Apurbo Kumar Dip",
+  initials: "AD",
+  title: "Student at Jamalpur Science & Technology University",
+  email: "apurbodip9@gmail.com",
+  whatsapp: "+880191925330",
+  locations: ["Monirampur, Jashore", "Jamalpur Sadar"],
+  intro: "Electrical and Electronic Engineering student exploring the intersection of intelligent systems, automation, and practical engineering.",
+  about: [
+    "I’m Apurbo Kumar Dip, an Electrical and Electronic Engineering (EEE) student at Jamalpur Science and Technology University (JSTU). I’m passionate about Machine Learning, Deep Learning, AI Automation, electronics, and emerging technologies.",
+    "I completed my SSC in 2020 with a GPA of 4.56 and HSC in 2022 with a GPA of 4.98. Alongside my academic journey in EEE, I enjoy learning new technologies, experimenting with ideas, and building practical projects.",
+    "My goal is to develop strong expertise in Artificial Intelligence and intelligent automation and transform innovative ideas into practical solutions that can create real-world impact.",
+  ],
+  details: [
+    { label: "Full Name", value: "Apurbo Kumar Dip" },
+    { label: "Date of Birth", value: "15 January 2003" },
+    { label: "Father’s Name", value: "Dipankar Kumar Das" },
+    { label: "Mother’s Name", value: "Shirmila Das" },
+    { label: "Hometown", value: "Hogladanga, Monirampur, Jashore, Bangladesh" },
+  ],
+  highlights: [
+    { label: "Education", value: "EEE Student · Jamalpur Science and Technology University" },
+    { label: "Areas of Interest", value: "Machine Learning · Deep Learning · AI Automation" },
+    { label: "Technical Interests", value: "Electronics · Programming · Emerging Technologies" },
+    { label: "Personal Approach", value: "Learn → Build → Experiment → Improve" },
+  ],
+  education: [
+    { year: "2020", title: "Secondary School Certificate", place: "K.H.N High School", detail: "GPA 4.56" },
+    { year: "2022", title: "Higher Secondary Certificate", place: "Monirampur Govt. College", detail: "GPA 4.98" },
+    { year: "Present", title: "Electrical & Electronic Engineering", place: "Jamalpur Science and Technology University", detail: "Undergraduate student" },
+  ],
+  skills: ["AutoCAD 2D & 3D", "AI Automation", "Graphic Design", "OrCAD", "Proteus", "Python", "Video Editing"],
+  projects: [
+    { title: "Library Management System", category: "Course Project", tech: [], detail: "A course project focused on a library management system." },
+    { title: "AutoCAD 2D & 3D", category: "Course Project", tech: ["AutoCAD"], detail: "Technical design work using AutoCAD in 2D and 3D." },
+    { title: "Robotics Arm Using ESP-8266", category: "Course Project", tech: ["ESP-8266", "Robotics"], detail: "A robotic arm project using the ESP-8266 platform." },
+    { title: "Smart Gesture Gloves", category: "Course Project", tech: ["Electronics"], detail: "A smart gloves project built around gesture interaction." },
+    { title: "Instagram Lead Generation AI Agent", category: "AI Automation", tech: ["AI Agent", "Automation"], detail: "An AI agent for Instagram lead generation workflows." },
+    { title: "AI Newsletter Agent", category: "AI Automation", tech: ["AI Agent", "Automation"], detail: "An AI agent designed around newsletter workflows." },
+    { title: "AI Resume Builder", category: "AI Automation", tech: ["AI", "Automation"], detail: "An AI-assisted resume building project." },
+    { title: "AI Career & Learning Roadmap Agent", category: "AI Automation", tech: ["AI Agent"], detail: "An agent for creating career and learning roadmaps." },
+    { title: "Customer Support RAG Agent", category: "AI Automation", tech: ["RAG", "AI Agent"], detail: "A retrieval-augmented AI agent for customer support." },
+    { title: "WhatsApp AI Automation Bot", category: "Python", tech: ["Python", "AI Automation"], detail: "A WhatsApp automation bot built with Python and AI." },
+    { title: "Jarvis AI Voice Assistant System", category: "Python", tech: ["Python", "Voice AI"], detail: "A Python-based AI voice assistant system." },
+  ],
+  certificate: { title: "Learn to Conduct Research with Deep Learning & Explainable AI", type: "Certificate of Participation", detail: "3 Days Hands-on Training Program" },
+  building: ["AI Agents and SaaS Products", "Two-way Light Switches", "Seven Segment Display"],
+  vision: "My goal is to build a professional career in Electrical and Electronic Engineering (EEE) while continuously developing my expertise in Machine Learning, AI Agents, and AI Automation. I aim to combine engineering knowledge with AI to create smart, practical, and innovative solutions for real-world problems.",
+  social: {
+    linkedin: "https://www.linkedin.com/in/apurbo-kumar-dip-5b95b241b/",
+    github: "https://github.com/dashboard",
+  },
+} as const;
+
+export type PersonalData = typeof personalData;
