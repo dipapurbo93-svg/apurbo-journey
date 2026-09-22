@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowDown, ArrowUpRight, Check, ChevronDown, Github, Linkedin, Mail, MapPin, Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalData } from "@/data/personalData";
-import heroVisual from "@/assets/engineering-ai-visual.jpg";
+import portraitAsset from "@/assets/apurbo-kumar-dip-portrait.jpeg.asset.json";
 
 const navItems = [
   ["About", "about"], ["Journey", "education"], ["Skills", "skills"], ["Projects", "projects"],
@@ -49,7 +49,7 @@ export function PortfolioPage() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto grid h-18 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center px-5 md:px-8">
           <button className="flex min-w-0 items-center gap-3 text-left" onClick={() => scrollTo("home")} aria-label="Go to home">
-            <span className="brand-mark">AD</span><span className="truncate font-display text-sm font-semibold">Apurbo Kumar Dip</span>
+            <span className="brand-mark"><img src={portraitAsset.url} alt="" /></span><span className="truncate font-display text-sm font-semibold">Apurbo Kumar Dip</span>
           </button>
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Main navigation">
             {navItems.map(([label, id]) => <button key={id} className="nav-link" onClick={() => scrollTo(id)}>{label}</button>)}
@@ -73,7 +73,7 @@ export function PortfolioPage() {
               <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 text-sm text-muted-foreground"><span className="inline-flex items-center gap-2"><MapPin size={15} className="text-primary" />{personalData.locations[0]}</span><span className="inline-flex items-center gap-2"><Zap size={15} className="text-primary" />Building intelligent systems</span></div>
             </div>
             <div className="hero-frame">
-              <img src={heroVisual} alt="Abstract electrical engineering and artificial intelligence circuitry" width={1200} height={1504} className="h-full w-full object-cover" />
+              <img src={portraitAsset.url} alt="Apurbo Kumar Dip" width={768} height={1024} className="h-full w-full object-cover object-top" />
               <div className="hero-caption"><span>Engineering × Intelligence</span><span>01 / 09</span></div>
             </div>
           </div>
