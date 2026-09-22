@@ -31,7 +31,7 @@ export function PortfolioPage() {
     const journeyObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        const index = Number((entry.target as HTMLElement).dataset.journeyIndex);
+        const index = Number((entry.target as HTMLElement).dataset["journeyIndex"]);
         if (!Number.isNaN(index)) setActiveJourney(index);
       });
     }, { rootMargin: "-38% 0px -46%", threshold: 0 });
