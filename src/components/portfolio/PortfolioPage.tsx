@@ -17,6 +17,7 @@ export function PortfolioPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState("All");
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [activeJourney, setActiveJourney] = useState(0);
   const categories = ["All", ...new Set(personalData.projects.map((project) => project.category))];
   const projects = filter === "All" ? personalData.projects : personalData.projects.filter((project) => project.category === filter);
 
@@ -24,6 +25,18 @@ export function PortfolioPage() {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")), { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const journeyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const index = Number((entry.target as HTMLElement).dataset["journeyIndex"]);
+        if (!Number.isNaN(index)) setActiveJourney(index);
+      });
+    }, { rootMargin: "-38% 0px -46%", threshold: 0 });
+    document.querySelectorAll("[data-journey-index]").forEach((element) => journeyObserver.observe(element));
+    return () => journeyObserver.disconnect();
   }, []);
 
   const scrollTo = (id: string) => {
@@ -82,7 +95,32 @@ export function PortfolioPage() {
 
         <section id="education" className="section-band reveal">
           <div className="section-inner"><SectionHeading index="02" label="Where I came from" title="A learning journey in motion." />
-            <div className="timeline">{personalData.education.map((item) => <article className="timeline-item" key={item.title}><div className="timeline-year">{item.year}</div><div className="timeline-dot"/><div><p className="eyebrow">{item.detail}</p><h3>{item.title}</h3><p>{item.place}</p></div></article>)}</div>
+            <div className="journey" aria-label="Journey from 2003 to the present">
+              <div className="journey-rail" aria-hidden="true"><span /></div>
+              <ol className="journey-list">
+                {personalData.journey.map((item, index) => (
+                  <li
+                    className={`journey-step ${activeJourney === index ? "is-active" : ""}`}
+                    data-journey-index={index}
+                    key={`${item.marker}-${item.title}`}
+                    tabIndex={0}
+                    aria-current={activeJourney === index ? "step" : undefined}
+                    onFocus={() => setActiveJourney(index)}
+                    onMouseEnter={() => setActiveJourney(index)}
+                  >
+                    <div className="journey-marker"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.marker}</strong></div>
+                    <div className="journey-node" aria-hidden="true"><i /></div>
+                    <article className="journey-card">
+                      <p className="eyebrow">{item.phase}</p>
+                      <h3>{item.title}</h3>
+                      <p>{item.detail}</p>
+                      {"supporting" in item && <p className="journey-supporting">{item.supporting}</p>}
+                    </article>
+                  </li>
+                ))}
+              </ol>
+              <div className="journey-range" aria-hidden="true"><span>2003</span><i /><span>Present</span></div>
+            </div>
           </div>
         </section>
 

@@ -30,6 +30,13 @@ export const personalData = {
     { year: "2022", title: "Higher Secondary Certificate", place: "Monirampur Govt. College", detail: "GPA 4.98" },
     { year: "Present", title: "Electrical & Electronic Engineering", place: "Jamalpur Science and Technology University", detail: "Undergraduate student" },
   ],
+  journey: [
+    { marker: "15 Jan 2003", phase: "Beginning", title: "Born", detail: "Hogladanga, Monirampur, Jashore" },
+    { marker: "2020", phase: "Secondary education", title: "SSC", detail: "GPA 4.56" },
+    { marker: "2022", phase: "Higher secondary education", title: "HSC", detail: "GPA 4.98" },
+    { marker: "University", phase: "Engineering education", title: "Electrical & Electronic Engineering (EEE)", detail: "Jamalpur Science and Technology University (JSTU)" },
+    { marker: "Present", phase: "Current direction", title: "AI & practical engineering", detail: "Machine Learning, Deep Learning, AI Agents, and AI Automation", supporting: "Electronics, Programming, and practical engineering projects" },
+  ],
   skills: ["AutoCAD 2D & 3D", "AI Automation", "Graphic Design", "OrCAD", "Proteus", "Python", "Video Editing"],
   projects: [
     { title: "Library Management System", category: "Course Project", tech: [], detail: "A course project focused on a library management system." },
